@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Application Form - Web Development Internship</title>
+  
+  <!-- Google Fonts: Poppins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- FontAwesome for validation icons in fields -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- External stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Decorative blur blobs for glassmorphism background -->
+  <div class="blob blob-1" aria-hidden="true"></div>
+  <div class="blob blob-2" aria-hidden="true"></div>
+  <div class="blob blob-3" aria-hidden="true"></div>
+
+  <main class="container">
+    <div class="glass-card">
+      <header class="form-header">
+        <!-- Stylized SVGs instead of heavy image placeholders -->
+        <div class="illustration-container" aria-hidden="true">
+          <svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" style="stop-color:#2563EB;stop-opacity:1" />
+                <stop offset="100%" style="stop-color:#7C3AED;stop-opacity:1" />
+              </linearGradient>
+            </defs>
+            <circle cx="100" cy="100" r="80" fill="url(#grad1)" opacity="0.15" />
+            <rect x="70" y="50" width="60" height="90" rx="8" fill="url(#grad1)" />
+            <line x1="85" y1="75" x2="115" y2="75" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" />
+            <line x1="85" y1="90" x2="115" y2="90" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" />
+            <line x1="85" y1="105" x2="105" y2="105" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" />
+            <circle cx="120" cy="125" r="22" fill="#F59E0B" />
+            <path d="M112 125l5 5 10-10" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </div>
+        <h1>Job Application Form</h1>
+        <p class="subtitle">Fill in your details to submit your application.</p>
+      </header>
+
+      <form id="jobAppForm" novalidate>
+        
+        <!-- Row 1: Full Name & Email -->
+        <div class="form-row">
+          <div class="form-group" id="group-fullName">
+            <label for="fullName">Full Name <span class="required" aria-hidden="true">*</span></label>
+            <div class="input-wrapper">
+              <i class="fa-regular fa-user field-icon"></i>
+              <input 
+                type="text" 
+                id="fullName" 
+                name="fullName" 
+                placeholder="e.g. Jane Doe" 
+                required 
+                aria-required="true"
+                aria-describedby="error-fullName"
+              >
+              <i class="fa-solid fa-circle-check status-icon success"></i>
+              <i class="fa-solid fa-circle-exclamation status-icon error"></i>
+            </div>
+            <span class="error-message" id="error-fullName" role="alert">Full name must be at least 3 characters and contain only letters and spaces.</span>
+          </div>
+
+          <div class="form-group" id="group-email">
+            <label for="email">Email Address <span class="required" aria-hidden="true">*</span></label>
+            <div class="input-wrapper">
+              <i class="fa-regular fa-envelope field-icon"></i>
+              <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                placeholder="e.g. jane.doe@example.com" 
+                required 
+                aria-required="true"
+                aria-describedby="error-email"
+              >
+              <i class="fa-solid fa-circle-check status-icon success"></i>
+              <i class="fa-solid fa-circle-exclamation status-icon error"></i>
+            </div>
+            <span class="error-message" id="error-email" role="alert">Please enter a valid email address.</span>
+          </div>
+        </div>
+
+        <!-- Row 2: Phone Number & City -->
+        <div class="form-row">
+          <div class="form-group" id="group-phone">
+            <label for="phone">Phone Number <span class="required" aria-hidden="true">*</span></label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-phone field-icon"></i>
+              <input 
+                type="tel" 
+                id="phone" 
+                name="phone" 
+                placeholder="e.g. 9876543210" 
+                required 
+                aria-required="true"
+                aria-describedby="error-phone"
+              >
+              <i class="fa-solid fa-circle-check status-icon success"></i>
+              <i class="fa-solid fa-circle-exclamation status-icon error"></i>
+            </div>
+            <span class="error-message" id="error-phone" role="alert">Phone number must be exactly 10 digits.</span>
+          </div>
+
+          <div class="form-group" id="group-city">
+            <label for="city">City <span class="required" aria-hidden="true">*</span></label>
+            <div class="input-wrapper">
+              <i class="fa-solid fa-location-dot field-icon"></i>
+              <input 
+                type="text" 
+                id="city" 
+                name="city" 
+                placeholder="e.g. New York" 
+                required 
+                aria-required="true"
+                aria-describedby="error-city"
+              >
+              <i class="fa-solid fa-circle-check status-icon success"></i>
+              <i class="fa-solid fa-circle-exclamation status-icon error"></i>
+            </div>
+            <span class="error-message" id="error-city" role="alert">City is required.</span>
+          </div>
+        </div>
+
+        <!-- Row 3: Position Applying For -->
+        <div class="form-group" id="group-position">
+          <label for="position">Position Applying For <span class="required" aria-hidden="true">*</span></label>
+          <div class="input-wrapper">
+            <i class="fa-solid fa-briefcase field-icon"></i>
+            <select 
+              id="position" 
+              name="position" 
+              required 
+              aria-required="true"
+              aria-describedby="error-position"
+            >
+              <option value="" disabled selected>Choose a position...</option>
+              <option value="Frontend Developer">Frontend Developer</option>
+              <option value="Backend Developer">Backend Developer</option>
+              <option value="Full Stack Developer">Full Stack Developer</option>
+              <option value="UI/UX Designer">UI/UX Designer</option>
+              <option value="Web Development Intern">Web Development Intern</option>
+            </select>
+            <i class="fa-solid fa-circle-check status-icon success"></i>
+            <i class="fa-solid fa-circle-exclamation status-icon error"></i>
+          </div>
+          <span class="error-message" id="error-position" role="alert">Please select a position.</span>
+        </div>
+
+        <!-- Section: Experience Level -->
+        <div class="form-group" id="group-experience">
+          <fieldset class="radio-fieldset">
+            <legend>Experience Level <span class="required" aria-hidden="true">*</span></legend>
+            <div class="radio-grid" role="radiogroup" aria-required="true" aria-describedby="error-experience">
+              
+              <label class="radio-label">
+                <input type="radio" name="experience" value="Fresher">
+                <span class="custom-radio"></span>
+                <span class="radio-text">Fresher</span>
+              </label>
+
+              <label class="radio-label">
+                <input type="radio" name="experience" value="0-1 Years">
+                <span class="custom-radio"></span>
+                <span class="radio-text">0-1 Years</span>
+              </label>
+
+              <label class="radio-label">
+                <input type="radio" name="experience" value="2-5 Years">
+                <span class="custom-radio"></span>
+                <span class="radio-text">2-5 Years</span>
+              </label>
+
+              <label class="radio-label">
+                <input type="radio" name="experience" value="5+ Years">
+                <span class="custom-radio"></span>
+                <span class="radio-text">5+ Years</span>
+              </label>
+
+            </div>
+          </fieldset>
+          <span class="error-message" id="error-experience" role="alert">Please select an experience level.</span>
+        </div>
+
+        <!-- Section: Skills -->
+        <div class="form-group" id="group-skills">
+          <fieldset class="checkbox-fieldset">
+            <legend>Skills <span class="required" aria-hidden="true">*</span> <span class="legend-note">(Select at least one)</span></legend>
+            <div class="checkbox-grid" aria-required="true" aria-describedby="error-skills">
+              
+              <label class="checkbox-chip">
+                <input type="checkbox" name="skills" value="HTML">
+                <span class="chip-content">
+                  <i class="fa-brands fa-html5 skill-icon"></i>
+                  HTML
+                </span>
+              </label>
+
+              <label class="checkbox-chip">
+                <input type="checkbox" name="skills" value="CSS">
+                <span class="chip-content">
+                  <i class="fa-brands fa-css3-alt skill-icon"></i>
+                  CSS
+                </span>
+              </label>
+
+              <label class="checkbox-chip">
+                <input type="checkbox" name="skills" value="JavaScript">
+                <span class="chip-content">
+                  <i class="fa-brands fa-js skill-icon"></i>
+                  JavaScript
+                </span>
+              </label>
+
+              <label class="checkbox-chip">
+                <input type="checkbox" name="skills" value="React">
+                <span class="chip-content">
+                  <i class="fa-brands fa-react skill-icon"></i>
+                  React
+                </span>
+              </label>
+
+              <label class="checkbox-chip">
+                <input type="checkbox" name="skills" value="Node.js">
+                <span class="chip-content">
+                  <i class="fa-brands fa-node-js skill-icon"></i>
+                  Node.js
+                </span>
+              </label>
+
+              <label class="checkbox-chip">
+                <input type="checkbox" name="skills" value="SQL">
+                <span class="chip-content">
+                  <i class="fa-solid fa-database stroke-icon"></i>
+                  SQL
+                </span>
+              </label>
+
+            </div>
+          </fieldset>
+          <span class="error-message" id="error-skills" role="alert">Please select at least one skill.</span>
+        </div>
+
+        <!-- Row 4: Portfolio Website (Optional) -->
+        <div class="form-group" id="group-portfolio">
+          <label for="portfolio">Portfolio Website <span class="optional">(Optional)</span></label>
+          <div class="input-wrapper">
+            <i class="fa-solid fa-globe field-icon"></i>
+            <input 
+              type="url" 
+              id="portfolio" 
+              name="portfolio" 
+              placeholder="e.g. https://myportfolio.com"
+              aria-describedby="error-portfolio"
+            >
+            <i class="fa-solid fa-circle-check status-icon success"></i>
+            <i class="fa-solid fa-circle-exclamation status-icon error"></i>
+          </div>
+          <span class="error-message" id="error-portfolio" role="alert">Please enter a valid URL (e.g. https://example.com).</span>
+        </div>
+
+        <!-- Row 5: Message -->
+        <div class="form-group" id="group-message">
+          <div class="textarea-header">
+            <label for="message">Message <span class="required" aria-hidden="true">*</span></label>
+            <span class="char-counter" id="char-counter">0 / 300</span>
+          </div>
+          <div class="input-wrapper text-area-wrapper">
+            <i class="fa-regular fa-comment-dots field-icon textarea-icon"></i>
+            <textarea 
+              id="message" 
+              name="message" 
+              rows="4" 
+              placeholder="Tell us about yourself, why you want to apply, or relevant projects... (20-300 characters)" 
+              required 
+              aria-required="true"
+              aria-describedby="error-message"
+            ></textarea>
+            <i class="fa-solid fa-circle-check status-icon success textarea-status-icon"></i>
+            <i class="fa-solid fa-circle-exclamation status-icon error textarea-status-icon"></i>
+          </div>
+          <span class="error-message" id="error-message" role="alert">Message must be between 20 and 300 characters.</span>
+        </div>
+
+        <!-- Row 6: Terms and Conditions -->
+        <div class="form-group" id="group-terms">
+          <label class="terms-label">
+            <input 
+              type="checkbox" 
+              id="terms" 
+              name="terms" 
+              required 
+              aria-required="true"
+              aria-describedby="error-terms"
+            >
+            <span class="custom-checkbox"></span>
+            <span class="terms-text">
+              I agree to the <a href="#" class="terms-link" onclick="event.preventDefault()">Terms and Conditions</a> and consent to having my information processed. <span class="required" aria-hidden="true">*</span>
+            </span>
+          </label>
+          <span class="error-message" id="error-terms" role="alert">You must agree to the Terms and Conditions to submit.</span>
+        </div>
+
+        <!-- Buttons Row -->
+        <div class="button-group">
+          <button type="submit" class="btn btn-submit" id="submitBtn">
+            <span>Submit Application</span>
+          </button>
+          <button type="reset" class="btn btn-reset" id="resetBtn">
+            <span>Reset Form</span>
+          </button>
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  <!-- Success Popup Modal -->
+  <div class="modal-backdrop" id="successModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-card">
+      <div class="modal-icon-container">
+        <!-- SVG Animated Checkmark -->
+        <svg class="checkmark-svg" viewBox="0 0 52 52">
+          <circle class="checkmark-circle" cx="26" cy="26" r="25" fill="none"/>
+          <path class="checkmark-check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+        </svg>
+      </div>
+      <h2 id="modalTitle">Application Submitted!</h2>
+      <p class="modal-message">Your application has been received successfully. We will review it and contact you soon.</p>
+      <button class="btn btn-modal-close" id="closeModalBtn">
+        <span>Close</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- JavaScript file inclusion -->
+  <script src="script.js"></script>
+</body>
+</html>
